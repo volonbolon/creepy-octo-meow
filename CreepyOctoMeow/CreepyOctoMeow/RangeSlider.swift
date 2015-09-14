@@ -12,8 +12,16 @@ import UIKit
 class RangeSlider: UIControl {
     @IBInspectable var rangeColor:UIColor = UIColor.redColor()
     @IBInspectable var trackColor:UIColor = UIColor.blackColor()
-    @IBInspectable var absoluteMinimumValue:Double = 0
-    @IBInspectable var absoluteMaximumValue:Double = 100
+    @IBInspectable var absoluteMinimumValue:Double = 0 {
+        didSet {
+            self.currentMinimumValue = self.absoluteMinimumValue
+        }
+    }
+    @IBInspectable var absoluteMaximumValue:Double = 100 {
+        didSet {
+            self.currentMaximumValue = self.absoluteMaximumValue
+        }
+    }
     @IBInspectable var currentMinimumValue:Double! {
         didSet {
             self.sendActionsForControlEvents(UIControlEvents.ValueChanged)
@@ -24,8 +32,6 @@ class RangeSlider: UIControl {
             self.sendActionsForControlEvents(UIControlEvents.ValueChanged)
         }
     }
-    @IBInspectable var precision:Double = 0.0
-    @IBInspectable var continuos:Bool = true
     
     private var panning:Bool = false
     private var activeKnob:UIImageView!
@@ -56,17 +62,14 @@ class RangeSlider: UIControl {
         self.setup()
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
+    func setup() {
         self.minKnobImageView = UIImageView(image: self.knob)
         self.maxKnobImageView = UIImageView(image: self.knob)
         self.minKnobImageView.userInteractionEnabled = true
         self.maxKnobImageView.userInteractionEnabled = true
         self.addSubview(minKnobImageView)
         self.addSubview(maxKnobImageView)
-    }
-    
-    func setup() {
+        
         self.translatesAutoresizingMaskIntoConstraints = false
         let gestureRecognizer = UIPanGestureRecognizer(target: self, action: Selector("handlePanGesture:"))
         self.addGestureRecognizer(gestureRecognizer)
@@ -100,20 +103,17 @@ class RangeSlider: UIControl {
         minOutTrack.addLineToPoint(CGPointMake(minKnobX, trackPosition))
         minOutTrack.closePath()
         minOutTrack.stroke()
-
-        self.rangeColor.setStroke()
-        
-        track.moveToPoint(CGPointMake(minKnobX, trackPosition))
-        track.addLineToPoint(CGPointMake(maxKnobX, trackPosition))
-        track.closePath()
-        track.stroke()
-        
-        self.trackColor.setStroke()
         
         maxOutTrack.moveToPoint(CGPointMake(maxKnobX, trackPosition))
         maxOutTrack.addLineToPoint(CGPointMake((boundsSize.width-(knobWidth/2.0)), trackPosition))
         maxOutTrack.closePath()
         maxOutTrack.stroke()
+        
+        self.rangeColor.setStroke()
+        track.moveToPoint(CGPointMake(minKnobX, trackPosition))
+        track.addLineToPoint(CGPointMake(maxKnobX, trackPosition))
+        track.closePath()
+        track.stroke()
         
         self.minKnobImageView.center = CGPointMake(minKnobX, trackPosition)
         self.maxKnobImageView.center = CGPointMake(maxKnobX, trackPosition)
@@ -161,24 +161,6 @@ class RangeSlider: UIControl {
                 }
             }
             gesture.setTranslation(CGPointZero, inView: self)
-
-
-//            else
-//            {
-//                if (newKnobVal <= self.absMaxVal &&
-//                    (newKnobVal > self.curMaxVal || newKnobVal > self.curMinVal + self.minValSpan))
-//                {
-//                    if (fabsf(newKnobVal - self.absMaxVal) > self.valueFudge)
-//                    {
-//                        self.curMaxVal = newKnobVal;
-//                    }
-//                    else
-//                    {
-//                        self.curMaxVal = self.absMaxVal;
-//                    }
-//                }
-//            }
-
         case UIGestureRecognizerState.Ended:
             self.panning = false
         default:

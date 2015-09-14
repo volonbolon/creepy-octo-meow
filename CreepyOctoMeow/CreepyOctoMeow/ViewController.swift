@@ -43,7 +43,7 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    func rsValueChanged(sender:RangeSlider) {
+    @IBAction func rsValueChanged(sender:RangeSlider) {
         let min = sender.currentMinimumValue
         let max = sender.currentMaximumValue
         self.minLabel.text = String(min)
