@@ -15,6 +15,7 @@
 		B03448CB1BA6423B002F592A /* CreepyOctoMeowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03448CA1BA6423B002F592A /* CreepyOctoMeowTests.swift */; };
 		B03448D61BA6423B002F592A /* CreepyOctoMeowUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03448D51BA6423B002F592A /* CreepyOctoMeowUITests.swift */; };
 		B03448E41BA642AA002F592A /* UIImage+AssetIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03448E31BA642AA002F592A /* UIImage+AssetIdentifier.swift */; settings = {ASSET_TAGS = (); }; };
+		B07011F21BA6431400FC7EA3 /* RangeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07011F11BA6431400FC7EA3 /* RangeSlider.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		B03448D51BA6423B002F592A /* CreepyOctoMeowUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreepyOctoMeowUITests.swift; sourceTree = "<group>"; };
 		B03448D71BA6423B002F592A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B03448E31BA642AA002F592A /* UIImage+AssetIdentifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+AssetIdentifier.swift"; sourceTree = "<group>"; };
+		B07011F11BA6431400FC7EA3 /* RangeSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RangeSlider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		B03448B41BA6423B002F592A /* CreepyOctoMeow */ = {
 			isa = PBXGroup;
 			children = (
+				B07011F11BA6431400FC7EA3 /* RangeSlider.swift */,
 				B03448E31BA642AA002F592A /* UIImage+AssetIdentifier.swift */,
 				B03448B51BA6423B002F592A /* AppDelegate.swift */,
 				B03448B71BA6423B002F592A /* ViewController.swift */,
@@ -258,6 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B07011F21BA6431400FC7EA3 /* RangeSlider.swift in Sources */,
 				B03448B81BA6423B002F592A /* ViewController.swift in Sources */,
 				B03448E41BA642AA002F592A /* UIImage+AssetIdentifier.swift in Sources */,
 				B03448B61BA6423B002F592A /* AppDelegate.swift in Sources */,
@@ -487,6 +491,7 @@
 				B03448DC1BA6423B002F592A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B03448DD1BA6423B002F592A /* Build configuration list for PBXNativeTarget "CreepyOctoMeowTests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +500,7 @@
 				B03448DF1BA6423B002F592A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B03448E01BA6423B002F592A /* Build configuration list for PBXNativeTarget "CreepyOctoMeowUITests" */ = {
 			isa = XCConfigurationList;
@@ -503,6 +509,7 @@
 				B03448E21BA6423B002F592A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
