@@ -168,6 +168,10 @@ class RangeSlider: UIControl {
         }
         self.setNeedsDisplay()
     }
+    
+    override func intrinsicContentSize() -> CGSize {
+        return CGSizeMake(UIViewNoIntrinsicMetric, 19.0)
+    }
 }
 
 

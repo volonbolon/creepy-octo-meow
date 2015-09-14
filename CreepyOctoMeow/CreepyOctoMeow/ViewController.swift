@@ -31,10 +31,9 @@ class ViewController: UIViewController {
         
         let xc = NSLayoutConstraint(item: self.view, attribute: NSLayoutAttribute.CenterX, relatedBy: NSLayoutRelation.Equal, toItem: rs, attribute: NSLayoutAttribute.CenterX, multiplier: 1.0, constant: 0.0)
         let yc = NSLayoutConstraint(item: self.view, attribute: NSLayoutAttribute.CenterY, relatedBy: NSLayoutRelation.Equal, toItem: rs, attribute: NSLayoutAttribute.CenterY, multiplier: 1.0, constant: 0.0)
-        let hc = NSLayoutConstraint(item: rs, attribute: NSLayoutAttribute.Height, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1.0, constant: 50)
         let wc = NSLayoutConstraint(item: rs, attribute: NSLayoutAttribute.Width, relatedBy: NSLayoutRelation.Equal, toItem: nil, attribute: NSLayoutAttribute.NotAnAttribute, multiplier: 1.0, constant: 200)
         
-        rs.addConstraints([wc, hc])
+        rs.addConstraints([wc])
         self.view.addConstraints([xc,yc])
     }
 
